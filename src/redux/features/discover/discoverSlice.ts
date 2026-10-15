@@ -1,7 +1,7 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { Movie, MovieState } from './movieTypes';
+import type { Movie, MovieState } from './discoverTypes';
 
 import {
   fetchTrendingMovies,
@@ -9,7 +9,7 @@ import {
   fetchTopRatedMovies,
   fetchUpcomingMovies,
   fetchMoviesBySearch,
-} from './movieThunk';
+} from './discoverThunk';
 
 const initialState: MovieState = {
   trending: [],

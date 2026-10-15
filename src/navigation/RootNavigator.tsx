@@ -20,11 +20,6 @@ const RootNavigator = () => {
         headerShown: false,
       }}
     >
-      {/* <Stack.Screen
-        name="Splash"
-        component={SplashScreen}
-      /> */}
-
 
       <Stack.Screen 
       name="App" 

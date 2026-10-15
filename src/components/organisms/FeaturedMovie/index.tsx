@@ -11,8 +11,8 @@ import AppText from '@/components/atoms/AppText';
 import { COLORS } from '@/constants/colors';
 
 import { styles } from './styles';
-import { Movie } from '@/redux/features/movie/movieTypes';
-import { getImageUrl } from '@/redux/features/movie/movieService';
+import { Movie } from '@/redux/features/discover/discoverTypes';
+import { getImageUrl } from '@/redux/features/discover/discoverService';
 
 interface Props {
   movie: Movie;

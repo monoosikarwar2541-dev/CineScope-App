@@ -54,7 +54,7 @@ import {
   selectMovieDetailsError,
 } from '@/redux/features/movie-details/movieDetailsSelectors';
 
-import type { Movie, MovieListItem } from '@/redux/features/movie/movieTypes';
+import type { Movie, MovieListItem } from '@/redux/features/discover/discoverTypes';
 import type { RootStackParamList } from '@/navigation/types';
 
 import styles from './styles';

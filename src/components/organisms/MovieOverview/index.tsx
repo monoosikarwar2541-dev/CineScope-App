@@ -5,7 +5,7 @@ import AppText from '@/components/atoms/AppText';
 import AppImage from '@/components/atoms/AppImage';
 import GenreChip from '@/components/atoms/GenreChip';
 import MovieInfoRow from '@/components/molecules/MovieInfoRow';
-import { getImageUrl } from '@/redux/features/movie/movieService';
+import { getImageUrl } from '@/redux/features/discover/discoverService';
 import { ms } from '@/utils/responsive';
 import styles from './styles';
 

@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import AppText from '@/components/atoms/AppText';
 import AppButton from '@/components/atoms/AppButton';
-import { getImageUrl } from '@/redux/features/movie/movieService';
+import { getImageUrl } from '@/redux/features/discover/discoverService';
 import { hp, ms, wp } from '@/utils/responsive';
 import styles from './styles';
 

@@ -8,9 +8,9 @@ import {
   getTopRatedMovies,
   getUpcomingMovies,
   searchMovies,
-} from './movieService';
+} from './discoverService';
 
-import type { Movie } from './movieTypes';
+import type { Movie } from './discoverTypes';
 
 const getErrorMessage = (error: unknown): string => {
   if (axios.isAxiosError(error)) {

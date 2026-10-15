@@ -1,7 +1,7 @@
 
 
 import { MOVIE_ENDPOINTS } from '@/api/endpoints/movie';
-import type { Movie, MovieResponse } from './movieTypes';
+import type { Movie, MovieResponse } from './discoverTypes';
 import { apiClient } from '@/api';
 export const getImageUrl = (
   path: string | null|undefined,

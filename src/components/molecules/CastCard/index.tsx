@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { View } from 'react-native';
 import AppImage from '@/components/atoms/AppImage';
 import AppText from '@/components/atoms/AppText';
-import { getImageUrl } from '@/redux/features/movie/movieService';
+import { getImageUrl } from '@/redux/features/discover/discoverService';
 import styles from './styles';
 
 type CastMember = {

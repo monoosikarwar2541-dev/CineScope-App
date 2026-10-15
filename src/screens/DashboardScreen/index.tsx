@@ -30,9 +30,9 @@ import { COLORS } from '@/constants/colors';
 
 
 import { styles } from './styles';
-import { selectMovieState, selectPopularMovies, selectSearchResults, selectTopRatedMovies, selectTrendingMovies, selectUpcomingMovies } from '@/redux/features/movie/movieSelectors';
-import { fetchMoviesBySearch, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies, fetchUpcomingMovies } from '@/redux/features/movie/movieThunk';
-import { clearSearchResults } from '@/redux/features/movie/movieSlice';
+import { selectMovieState, selectPopularMovies, selectSearchResults, selectTopRatedMovies, selectTrendingMovies, selectUpcomingMovies } from '@/redux/features/discover/discoverSelectors';
+import { fetchMoviesBySearch, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies, fetchUpcomingMovies } from '@/redux/features/discover/discoverThunk';
+import { clearSearchResults } from '@/redux/features/discover/discoverSlice';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 type NavigationProp =

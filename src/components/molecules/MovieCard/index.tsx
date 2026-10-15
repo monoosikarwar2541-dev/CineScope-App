@@ -72,12 +72,12 @@ import { Star } from 'lucide-react-native';
 
 import AppText from '@/components/atoms/AppText';
 import { COLORS } from '@/constants/colors';
-import { Movie } from '@/redux/features/movie/movieTypes';
-import { getImageUrl } from '@/redux/features/movie/movieService';
+import { Movie } from '@/redux/features/discover/discoverTypes';
+import { getImageUrl } from '@/redux/features/discover/discoverService';
 
 import { styles } from './styles';
 
-import type { MovieListItem } from '@/redux/features/movie/movieTypes';
+import type { MovieListItem } from '@/redux/features/discover/discoverTypes';
 
 interface Props {
   movie: MovieListItem;

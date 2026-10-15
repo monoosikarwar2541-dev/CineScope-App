@@ -61,7 +61,7 @@ import { FlatList, View } from 'react-native';
 
 import AppText from '@/components/atoms/AppText';
 import MovieCard from '@/components/molecules/MovieCard';
-import type { MovieListItem } from '@/redux/features/movie/movieTypes';
+import type { MovieListItem } from '@/redux/features/discover/discoverTypes';
 
 import { styles } from './styles';
 

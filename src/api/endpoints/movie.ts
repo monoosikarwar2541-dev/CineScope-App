@@ -2,19 +2,17 @@
 export const MOVIE_ENDPOINTS = {
   // Movie Lists
   TRENDING: '/trending/movie/day',
-
   POPULAR: '/movie/popular',
-
   TOP_RATED: '/movie/top_rated',
-
   UPCOMING: '/movie/upcoming',
-
   NOW_PLAYING: '/movie/now_playing',
 
   // Search Movies
   SEARCH: '/search/movie',
+  DISCOVER: '/discover/movie',
+  GET_GENRES: '/genre/movie/list',
 
-  // Movie Details
+  // Movies Details
   GET_BY_ID: (id: number) =>
     `/movie/${id}`,
 
@@ -40,7 +38,6 @@ export const MOVIE_ENDPOINTS = {
     `/movie/${id}/watch/providers`,
 
   // Discover & Genres
-  DISCOVER: '/discover/movie',
-
-  GET_GENRES: '/genre/movie/list',
+  // DISCOVER: '/discover/movie',
+  // GET_GENRES: '/genre/movie/list',
 } as const;
