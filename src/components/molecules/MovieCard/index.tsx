@@ -66,18 +66,17 @@
 // export default MovieCard;
 
 
+
 import React, { memo, useCallback } from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { Star } from 'lucide-react-native';
 
 import AppText from '@/components/atoms/AppText';
 import { COLORS } from '@/constants/colors';
-import { Movie } from '@/redux/features/discover/discoverTypes';
 import { getImageUrl } from '@/redux/features/discover/discoverService';
 
-import { styles } from './styles';
-
 import type { MovieListItem } from '@/redux/features/discover/discoverTypes';
+import { styles } from './styles';
 
 interface Props {
   movie: MovieListItem;
@@ -86,7 +85,6 @@ interface Props {
 
 const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
   const poster = getImageUrl(movie.poster_path, 'w342');
-
   const year = movie.release_date?.slice(0, 4) || 'N/A';
 
   const handlePress = useCallback(() => {
@@ -98,14 +96,14 @@ const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
       style={styles.container}
       onPress={handlePress}
       accessibilityRole="button"
-      accessibilityLabel={`View ${movie.title}`}
+      accessibilityLabel={`View ${movie.title || 'movie'}`}
     >
       {poster ? (
         <Image
           source={{ uri: poster }}
           style={styles.poster}
           resizeMode="cover"
-          accessibilityLabel={`${movie.title} poster`}
+          accessibilityLabel={`${movie.title || 'Movie'} poster`}
         />
       ) : (
         <View style={[styles.poster, styles.noPoster]}>
@@ -115,11 +113,7 @@ const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
         </View>
       )}
 
-      <AppText
-        size={12}
-        weight="700"
-        numberOfLines={1}
-      >
+      <AppText size={12} weight="700" numberOfLines={1}>
         {movie.title || 'Untitled'}
       </AppText>
 

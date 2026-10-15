@@ -16,7 +16,8 @@ import ProfileScreen from '@/screens/ProfileScreen';
 import type { AppTabParamList } from './types';
 import { COLORS } from '@/constants/colors';
 import { ms, rf } from '@/utils/responsive';
-import WatchlistScreen from '@/screens/WatchlistScreen';
+import SavedScreen from '@/screens/SavedMediaScreen';
+import SavedMediaScreen from '@/screens/SavedMediaScreen';
 
 const Tab = createBottomTabNavigator<AppTabParamList>();
 
@@ -54,7 +55,7 @@ const AppNavigator = () => {
               return <House {...iconProps} />;
             case 'Search':
               return <Search {...iconProps} />;
-            case 'Watchlist':
+            case 'Saved':
               return <Bookmark {...iconProps} />;
             case 'Profile':
               return <UserRound {...iconProps} />;
@@ -75,8 +76,8 @@ const AppNavigator = () => {
       />
 
       <Tab.Screen
-        name="Watchlist"
-        component={WatchlistScreen}
+        name="Saved"
+        component={SavedMediaScreen}
       />
 
       <Tab.Screen

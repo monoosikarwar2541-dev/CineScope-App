@@ -34,6 +34,7 @@ import { selectMovieState, selectPopularMovies, selectSearchResults, selectTopRa
 import { fetchMoviesBySearch, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies, fetchUpcomingMovies } from '@/redux/features/discover/discoverThunk';
 import { clearSearchResults } from '@/redux/features/discover/discoverSlice';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { MovieListItem } from '@/redux/features/discover/discoverTypes';
 
 type NavigationProp =
   NativeStackNavigationProp<RootStackParamList>;
@@ -107,14 +108,14 @@ const DashboardScreen = () => {
   const error = movieState.error;
   const featuredMovie = trending[0];
 
-  const openMovie = (movie: (typeof trending)[number]) => {
-    navigation.navigate('MovieDetails', {
-      movieId: movie.id,
-    });
-  };
+ const openMovie = (movie: MovieListItem) => {
+  navigation.navigate('MovieDetails', {
+    movieId: movie.id,
+  });
+};
 
   const openWatchlist = () => {
-    navigation.navigate('Watchlist');
+    navigation.navigate('Saved');
   };
 
   return (

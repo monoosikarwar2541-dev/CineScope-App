@@ -37,7 +37,5 @@ export const MOVIE_ENDPOINTS = {
   GET_WATCH_PROVIDERS: (id: number) =>
     `/movie/${id}/watch/providers`,
 
-  // Discover & Genres
-  // DISCOVER: '/discover/movie',
-  // GET_GENRES: '/genre/movie/list',
+  
 } as const;

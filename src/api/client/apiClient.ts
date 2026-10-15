@@ -24,18 +24,26 @@ const request = <T>(
   });
 };
 
+// export const get = <T>(
+//   url: string,
+//   params?: QueryParams,
+//   config?: AxiosRequestConfig,
+// ) =>
+//   request<T>(
+//     'GET',
+//     url,
+//     undefined,
+//     params,
+//     config,
+//   );
+
 export const get = <T>(
   url: string,
-  params?: QueryParams,
   config?: AxiosRequestConfig,
-) =>
-  request<T>(
-    'GET',
-    url,
-    undefined,
-    params,
-    config,
-  );
+): Promise<AxiosResponse<T>> => {
+  return axiosInstance.get<T>(url, config);
+};
+
 
 export const post = <T>(
   url: string,
