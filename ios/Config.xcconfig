@@ -1,0 +1,4 @@
+BUNDLE_DISPLAY_NAME = CineScope
+BUNDLE_ID_SUFFIX =
+
+#include? "tmp.xcconfig"

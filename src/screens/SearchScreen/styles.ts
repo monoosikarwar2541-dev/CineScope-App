@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
 
   selectedGenreText: {
     color: COLORS.background,
+    
   },
 
   resultsHeading: {
@@ -75,7 +76,8 @@ const styles = StyleSheet.create({
     fontSize: rf(14),
     fontWeight: '700',
     paddingHorizontal: wp(4),
-    paddingBottom: ms(8),
+    paddingBottom: ms(15),
+   marginVertical:ms(15)
   },
 
   movieList: {

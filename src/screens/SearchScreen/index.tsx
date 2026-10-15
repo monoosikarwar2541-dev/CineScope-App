@@ -45,6 +45,7 @@ import { ms, rf, wp } from '@/utils/responsive';
 
 import { getImageUrl } from '@/redux/features/discover/discoverService';
 import styles from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const GENRES = [
   { label: 'All', id: null },
@@ -177,7 +178,7 @@ const SearchScreen = () => {
   );
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <Text style={styles.heading}>Search Movies</Text>
 
       <View style={styles.searchRow}>
@@ -289,7 +290,7 @@ const SearchScreen = () => {
           removeClippedSubviews
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
