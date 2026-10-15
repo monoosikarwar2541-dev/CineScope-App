@@ -1,32 +1,102 @@
 
-import React from 'react';
+// import React from 'react';
+// import { Image, Pressable, View } from 'react-native';
+// import { Star } from 'lucide-react-native';
+
+// import AppText from '@/components/atoms/AppText';
+// import { COLORS } from '@/constants/colors';
+// import { wp } from '@/utils/responsive';
+
+
+
+// import { styles } from './styles';
+// import { Movie } from '@/redux/features/movie/movieTypes';
+// import { getImageUrl } from '@/redux/features/movie/movieService';
+
+
+// interface Props {
+//   movie: Movie;
+//   onPress?: (movie: Movie) => void;
+  
+// }
+
+// const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
+//   const poster = getImageUrl(movie.poster_path, 'w342');
+//   const year = movie.release_date?.slice(0, 4) || 'N/A';
+
+//   return (
+//     <Pressable
+//       style={styles.container}
+//       onPress={() => onPress?.(movie)}
+//       accessibilityRole="button"
+//       accessibilityLabel={`View ${movie.title}`}
+//     >
+//       {poster ? (
+//         <Image
+//           source={{ uri: poster }}
+//           style={styles.poster}
+//           resizeMode="cover"
+//         />
+//       ) : (
+//         <View style={[styles.poster, styles.noPoster]}>
+//           <AppText size={12} color={COLORS.secondaryText}>
+//             No poster
+//           </AppText>
+//         </View>
+//       )}
+
+//       <AppText size={12} weight="700" numberOfLines={1}>
+//         {movie.title}
+//       </AppText>
+
+//       <AppText size={11} color={COLORS.secondaryText}>
+//         {year}
+//       </AppText>
+
+//       <View style={styles.rating}>
+//         <Star size={12} color={COLORS.star} fill={COLORS.star} />
+//         <AppText size={11} color={COLORS.secondaryText}>
+//           {Number(movie.vote_average ?? 0).toFixed(1)}
+//         </AppText>
+//       </View>
+//     </Pressable>
+//   );
+// };
+
+// export default MovieCard;
+
+
+import React, { memo, useCallback } from 'react';
 import { Image, Pressable, View } from 'react-native';
 import { Star } from 'lucide-react-native';
 
 import AppText from '@/components/atoms/AppText';
 import { COLORS } from '@/constants/colors';
-import { wp } from '@/utils/responsive';
-
-
-
-import { styles } from './styles';
 import { Movie } from '@/redux/features/movie/movieTypes';
 import { getImageUrl } from '@/redux/features/movie/movieService';
 
+import { styles } from './styles';
+
+import type { MovieListItem } from '@/redux/features/movie/movieTypes';
 
 interface Props {
-  movie: Movie;
-  onPress?: (movie: Movie) => void;
+  movie: MovieListItem;
+  onPress?: (movie: MovieListItem) => void;
 }
 
 const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
   const poster = getImageUrl(movie.poster_path, 'w342');
+
   const year = movie.release_date?.slice(0, 4) || 'N/A';
+
+  const handlePress = useCallback(() => {
+    onPress?.(movie);
+  }, [movie, onPress]);
 
   return (
     <Pressable
       style={styles.container}
-      onPress={() => onPress?.(movie)}
+      onPress={handlePress}
       accessibilityRole="button"
       accessibilityLabel={`View ${movie.title}`}
     >
@@ -35,6 +105,7 @@ const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
           source={{ uri: poster }}
           style={styles.poster}
           resizeMode="cover"
+          accessibilityLabel={`${movie.title} poster`}
         />
       ) : (
         <View style={[styles.poster, styles.noPoster]}>
@@ -44,8 +115,12 @@ const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
         </View>
       )}
 
-      <AppText size={12} weight="700" numberOfLines={1}>
-        {movie.title}
+      <AppText
+        size={12}
+        weight="700"
+        numberOfLines={1}
+      >
+        {movie.title || 'Untitled'}
       </AppText>
 
       <AppText size={11} color={COLORS.secondaryText}>
@@ -53,7 +128,12 @@ const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
       </AppText>
 
       <View style={styles.rating}>
-        <Star size={12} color={COLORS.star} fill={COLORS.star} />
+        <Star
+          size={12}
+          color={COLORS.star}
+          fill={COLORS.star}
+        />
+
         <AppText size={11} color={COLORS.secondaryText}>
           {Number(movie.vote_average ?? 0).toFixed(1)}
         </AppText>
@@ -62,4 +142,4 @@ const MovieCard: React.FC<Props> = ({ movie, onPress }) => {
   );
 };
 
-export default MovieCard;
+export default memo(MovieCard);

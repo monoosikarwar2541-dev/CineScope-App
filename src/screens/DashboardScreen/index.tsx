@@ -33,6 +33,7 @@ import { styles } from './styles';
 import { selectMovieState, selectPopularMovies, selectSearchResults, selectTopRatedMovies, selectTrendingMovies, selectUpcomingMovies } from '@/redux/features/movie/movieSelectors';
 import { fetchMoviesBySearch, fetchPopularMovies, fetchTopRatedMovies, fetchTrendingMovies, fetchUpcomingMovies } from '@/redux/features/movie/movieThunk';
 import { clearSearchResults } from '@/redux/features/movie/movieSlice';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type NavigationProp =
   NativeStackNavigationProp<RootStackParamList>;
@@ -61,10 +62,11 @@ const DashboardScreen = () => {
   }, [dispatch]);
 
   // Search and category API calls
+
   useEffect(() => {
     const trimmedQuery = query.trim();
 
-    if (trimmedQuery) {
+    if (trimmedQuery.length > 0) {
       const timer = setTimeout(() => {
         dispatch(fetchMoviesBySearch(trimmedQuery));
       }, 400);
@@ -116,7 +118,7 @@ const DashboardScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
@@ -194,7 +196,7 @@ const DashboardScreen = () => {
           />
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

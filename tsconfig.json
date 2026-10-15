@@ -1,7 +1,7 @@
 {
   "extends": "@react-native/typescript-config",
   "compilerOptions": {
-   
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
@@ -13,14 +13,12 @@
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
       "@theme/*": ["./src/theme/*"],
-      "@config": ["./config/index.tsx"],
-      "@config/*": ["./config/*"],
-      "@/config": ["./config/index.tsx"],
-      "@/config/*": ["./config/*"],
-      "config": ["./config/index.tsx"],
-      "config/*": ["./config/*"],
+      "@config": ["./src/config/index.ts"],
+      "@config/*": ["./src/config/*"],
       "@types/*": ["./src/types/*"],
-      "@constants/*": ["./src/constants/*"]
+      "@constants/*": ["./src/constants/*"],
+      "@api/*": ["./src/api/*"],
+      "@features/*": ["./src/features/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

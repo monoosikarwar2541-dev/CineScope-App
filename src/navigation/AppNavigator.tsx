@@ -83,6 +83,7 @@ const AppNavigator = () => {
         name="Profile"
         component={ProfileScreen}
       />
+      
     </Tab.Navigator>
   );
 };

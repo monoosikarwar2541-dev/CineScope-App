@@ -3,6 +3,7 @@ export type RootStackParamList = {
   App: undefined;
   MovieDetails: { movieId: number };
   Watchlist: undefined;
+  
 };
 
 export type AppTabParamList = {

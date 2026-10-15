@@ -1,36 +1,35 @@
-import React from 'react';
-import { Text } from 'react-native';
-import type { TextProps } from 'react-native';
 
+import React, { memo } from 'react';
+import {
+  Text,
+  type TextProps,
+  type TextStyle,
+} from 'react-native';
 
-
-import { styles } from './styles';
-import { COLORS } from '@/constants/colors';
 import { rf } from '@/utils/responsive';
 
-
-type FontWeight = '400' | '500' | '600' | '700' | '800' | '900';
-
-interface AppTextProps extends TextProps {
+type AppTextProps = TextProps & {
   children: React.ReactNode;
   size?: number;
   color?: string;
-  weight?: FontWeight;
-}
+  weight?: TextStyle['fontWeight'];
+  lines?: number;
+};
 
-const AppText: React.FC<AppTextProps> = ({
+function AppText({
   children,
   size = 14,
-  color = COLORS.text,
+  color = '#FFFFFF',
   weight = '400',
+  lines,
   style,
-  ...props
-}) => {
+  ...rest
+}: AppTextProps) {
   return (
     <Text
-      {...props}
+      {...rest}
+      numberOfLines={lines}
       style={[
-        styles.text,
         {
           fontSize: rf(size),
           color,
@@ -42,6 +41,6 @@ const AppText: React.FC<AppTextProps> = ({
       {children}
     </Text>
   );
-};
+}
 
-export default AppText;
+export default memo(AppText);

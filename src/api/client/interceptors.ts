@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import axiosInstance from './axios';
 
 let isInitialized = false;
@@ -11,25 +11,19 @@ export const initializeInterceptors = () => {
   isInitialized = true;
 
   axiosInstance.interceptors.request.use(
-    async config => {
-      const token =
-        await AsyncStorage.getItem('accessToken');
-
-      if (token) {
-        config.headers.Authorization =
-          `Bearer ${token}`;
-      }
-
+    config => {
       if (__DEV__) {
         console.log('[API REQUEST]', {
           method: config.method?.toUpperCase(),
           url: config.url,
+          hasAuthorization: Boolean(
+            config.headers.Authorization,
+          ),
         });
       }
 
       return config;
     },
-
     error => Promise.reject(error),
   );
 
@@ -44,23 +38,16 @@ export const initializeInterceptors = () => {
 
       return response;
     },
-
-    async error => {
-      const status = error?.response?.status;
-
+    error => {
       if (__DEV__) {
         console.log('[API ERROR]', {
-          status,
+          status: error?.response?.status,
           url: error?.config?.url,
           message:
+            error?.response?.data?.status_message ||
             error?.response?.data?.message ||
             error?.message,
         });
-      }
-
-      if (status === 401) {
-        // Token expired.
-        // Handle logout or token refresh here.
       }
 
       return Promise.reject(error);

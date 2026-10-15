@@ -10,6 +10,16 @@ export interface Movie {
   vote_count?: number;
   genre_ids?: number[];
 }
+export interface MovieListItem {
+  id: number;
+  title: string;
+  name?: string;
+  poster_path?: string | null;
+  backdrop_path?: string | null;
+  release_date?: string;
+  vote_average?: number;
+  overview?: string;
+}
 
 export interface MovieResponse {
   page: number;
