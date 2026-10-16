@@ -1,22 +1,17 @@
-# 🎬 CineScope — Movie Discovery App
+#  CineScope — Movie Discovery App
 
 A React Native mobile application for discovering movies using real-time data from The Movie Database (TMDB) API. CineScope is designed to help users explore trending movies, search titles, discover genres, view movie details, and find related movies through a clean and reusable mobile interface.
 
-**Company:** Xplor BizConnect  
-**Project:** Movie Discovery App  
-**Technology:** React Native CLI, TypeScript  
-**API Provider:** The Movie Database (TMDB)  
-**Assignment Experience Level:** 0–2 Years
 
 ---
 
-## 📌 1. Project Overview
+##  1. Project Overview
 
 CineScope is a movie discovery application developed as part of the Xplor BizConnect React Native assignment.
 
 The objective is to build a functional mobile application that integrates multiple TMDB API endpoints, displays real movie information, provides smooth navigation, handles API errors, and follows a clean, maintainable project structure.
 
-## 🎯 2. Project Objectives
+## 2. Project Objectives
 
 - Integrate at least 15 distinct TMDB API endpoints.
 - Display real movie data through meaningful application screens.
@@ -27,7 +22,7 @@ The objective is to build a functional mobile application that integrates multip
 - Document installation, configuration, API integration, and execution.
 - Publish the source code through GitHub without exposing private credentials.
 
-## ✨ 3. Application Features
+##  3. Application Features
 
 The following features describe the intended application functionality. Keep only the features that are implemented and verified in the submitted build.
 
@@ -69,7 +64,7 @@ The following features describe the intended application functionality. Keep onl
 - API error handling
 - Responsive layouts for supported devices
 
-## 🛠️ 4. Technology Stack
+##  4. Technology Stack
 
 | Technology | Purpose |
 |---|---|
@@ -84,7 +79,7 @@ The following features describe the intended application functionality. Keep onl
 | Android Studio | Android emulator and SDK |
 | Xcode | iOS simulator and build tools |
 
-## 🌐 5. TMDB API Integration
+##  5. TMDB API Integration
 
 CineScope uses TMDB's REST API to retrieve movie information.
 
@@ -170,7 +165,7 @@ Shared API configuration avoids duplication.
 New features can be added without unnecessarily affecting existing modules.
 
 
-## 🧭 7. Navigation
+##  7. Navigation
 
 The application should provide navigation between its available screens, such as:
 
@@ -185,7 +180,7 @@ Movie cards should open the corresponding movie details screen. Related movies s
 
 Document the routes that are actually registered in the application.
 
-## 🗂️ 8. Project Structure
+##  8. Project Structure
 
 The following is a representative structure. Update it to match the actual project files.
 
@@ -224,7 +219,7 @@ CineScope/
 - `screens/`: Application screens
 - `utils/`: Shared utility functions
 
-## ⚙️ 9. Prerequisites
+## 9. Prerequisites
 
 Install the following tools before running the application:
 
@@ -239,7 +234,7 @@ Refer to the official React Native environment setup guide:
 
 https://reactnative.dev/docs/set-up-your-environment
 
-## 🚀 10. Installation and Setup
+##  10. Installation and Setup
 
 ### Step 1: Clone the repository
 
@@ -317,7 +312,7 @@ Use `npm run ios:live` for the live environment if that script and scheme are co
 
 **Note:** The commands above must match the scripts and schemes present in the actual repository.
 
-## 📦 11. Android APK Generation
+##  11. Android APK Generation
 
 Build the development debug APK:
 
@@ -340,7 +335,7 @@ android/app/build/outputs/apk/
 
 Confirm the actual output paths after successful builds. Release builds may require valid release-signing configuration.
 
-## 🧪 12. Testing and Verification
+##  12. Testing and Verification
 
 Before submitting the assignment, verify the following.
 
@@ -375,7 +370,7 @@ Before submitting the assignment, verify the following.
 
 Only mark items complete after actually testing them.
 
-## 🔐 13. API Security and Attribution
+##  13. API Security and Attribution
 
 CineScope uses TMDB APIs to retrieve movie information.
 
@@ -389,7 +384,7 @@ https://www.themoviedb.org/
 
 This product uses the TMDB API but is not endorsed or certified by TMDB.
 
-## 📸 14. Application Screenshots
+## 14. Application Screenshots
 
 Add screenshots from the actual running application to demonstrate the implemented functionality.
 
@@ -405,7 +400,7 @@ Suggested screenshots:
 
 Store screenshots in a directory such as `docs/screenshots/` and link them here once available.
 
-## 📋 15. Assignment Compliance Summary
+## 15. Assignment Compliance Summary
 
 | Assignment Requirement | Evidence to Provide |
 |---|---|
@@ -420,7 +415,7 @@ Store screenshots in a directory such as `docs/screenshots/` and link them here 
 | GitHub submission | Accessible repository URL |
 | Credential protection | `.gitignore` and `.env.example` |
 
-## 👨‍💻 16. Author and Repository
+##  16. Author and Repository
 
 **Developer: Monoo Sikarwar
 **Project:** CineScope — Movie Discovery App  
