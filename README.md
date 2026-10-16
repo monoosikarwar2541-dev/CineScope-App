@@ -13,14 +13,14 @@ The objective is to build a functional mobile application that integrates multip
 
 ## 2. Project Objectives
 
-- Integrate at least 15 distinct TMDB API endpoints.
+- Integrated  16 distinct TMDB API endpoints.
 - Display real movie data through meaningful application screens.
 - Implement navigation between movie discovery and details screens.
-- Create reusable UI components.
+- Created reusable UI components.
 - Handle loading, empty, and error states.
-- Maintain an organized and scalable codebase.
+- Maintaind an organized and scalable codebase.
 - Document installation, configuration, API integration, and execution.
-- Publish the source code through GitHub without exposing private credentials.
+
 
 ##  3. Application Features
 
@@ -428,5 +428,5 @@ Store screenshots in a directory such as `docs/screenshots/` and link them here 
 
 CineScope aims to provide a functional movie discovery experience using React Native and TMDB APIs. The project is organized around reusable components, API integration, navigation, and maintainable application code.
 
-The final submission should demonstrate working functionality, verified integration of at least 15 distinct TMDB endpoints, proper error handling, and clear setup documentation.
+The final submission should demonstrate working functionality, verified integration of at least 16 distinct TMDB endpoints, proper error handling, and clear setup documentation.
 
